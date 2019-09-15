@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Hoteru.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer overview</h2>
+
+<p>
+    
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_username)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_username)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model Hoteru.Models.Hotel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hotel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hotelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotelDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotelDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotelAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotelAddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
